@@ -1,4 +1,4 @@
-import { handleTaskClick } from "./modal.js";
+import { handleTaskClick } from "../modal.js";
 export function renderTasksFromLocalStorage() {
   const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 

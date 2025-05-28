@@ -1,7 +1,8 @@
 /**
  * Function imports tasks from the API
  */
-import { fetchTasks } from "./api/api";
+import { fetchTasks } from "./api/api.js";
+import { renderTasksFromLocalStorage } from "./ui/render.js";
 
 const loading = document.createElement("div");
 loading.id = "loading";
@@ -11,8 +12,8 @@ document.body.appendChild(loading);
 async function startApp() {
   try {
     const tasks = await fetchTasks();
-
     localStorage.setItem("tasks", JSON.stringify(tasks));
+    renderTasksFromLocalStorage();
 
     console.log("Tasks loaded:", tasks);
     //This removes the loading message if the tasks are loaded

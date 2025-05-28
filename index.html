@@ -7,9 +7,10 @@
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="./assets/favicon.svg"
+      href="./assets/logo-light (1).svg"
     />
-    <script defer src="./module.js/main.js" type="module"></script>
+    <script defer src="./modules/main.js" type="module"></script>
+    <link rel="stylesheet" href="./styles.css" />
     <title>Kanban Task Management</title>
   </head>
   <body>
@@ -17,5 +18,131 @@
       <div id="side-logo-div">
         <img id="logo" src="./assets/logo-light (1).svg" alt="logo-light" />
       </div>
+
+      <div class="boards-nav-links-div" id="boards-nav-links-div">
+        <h4 id="headline-sidepanel">ALL BOARDS (1)</h4>
+        <button class="board-btn">Launch Career</button>
+      </div>
+    </nav>
+
+    <div id="layout">
+      <header id="header" class="sticky-header">
+        <div class="header-name-div">
+          <img
+            src="./assets/favicon (3).svg"
+            alt="logo-mobile"
+            class="logo-mobile"
+          />
+          <h2 class="header-board-name" id="header-board-name">
+            Launch Career
+          </h2>
+        </div>
+        <div>
+          <button id="add-btn">
+            <span class="normal-text">+ Add New Task</span>
+            <span class="plus-text">+</span>
+          </button>
+        </div>
+      </header>
+
+      <div class="container">
+        <main class="card-column-main">
+          <div class="column-div" data-status="todo">
+            <div id="todo-head-div" class="column-head-div">
+              <span class="dot" id="todo-dot"></span>
+              <h4 id="toDoText" class="columnHeader">TODO ()</h4>
+            </div>
+
+            <div class="tasks-container"></div>
+          </div>
+          <div class="column-div" data-status="doing">
+            <div id="doing-head-div" class="column-head-div">
+              <span class="dot" id="doing-dot"></span>
+              <h4 id="doingText" class="columnHeader">DOING ()</h4>
+            </div>
+
+            <div class="tasks-container"></div>
+          </div>
+
+          <div class="column-div" data-status="done">
+            <div id="done-head-div" class="column-head-div">
+              <span class="dot" id="done-dot"></span>
+              <h4 id="doneText" class="columnHeader">DONE ()</h4>
+            </div>
+
+            <div class="tasks-container"></div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <dialog id="task-modal">
+      <form method="dialog" id="task-form">
+        <div class="modal-header">
+          <h3>Task</h3>
+          <button type="button" class="close-btn" id="task-close-btn">
+            &times;
+          </button>
+        </div>
+
+        <label for="task-title">Title</label>
+        <input type="text" id="task-title" name="title" required />
+
+        <label for="task-desc">Description</label>
+        <textarea id="task-desc" name="description" rows="4"></textarea>
+
+        <label for="task-status">Status</label>
+        <select id="task-status" name="status" required>
+          <option value="todo">todo</option>
+          <option value="doing">doing</option>
+          <option value="done">done</option>
+        </select>
+      </form>
+    </dialog>
+
+    <dialog id="add-new-task-modal">
+      <form method="dialog" id="add-new-task-form">
+        <div class="new-modal-header">
+          <h3>Add New Task</h3>
+          <button
+            type="button"
+            class="close-btn add-close-btn"
+            id="add-close-btn"
+          >
+            &times;
+          </button>
+        </div>
+
+        <label for="enter-title">Title</label>
+        <div class="input-group">
+          <input
+            type="text"
+            id="title-enter"
+            name="new-title"
+            required
+            placeholder="e.g Task one"
+          />
+        </div>
+
+        <label for="enter-desc">Description</label>
+        <textarea
+          id="entering-description"
+          name="new-description"
+          rows="4"
+          placeholder="e.g This task is about completeting the task and writing a description for the task
+          and any future task for that matter. Always write down your descriptions"
+        ></textarea>
+
+        <label for="enter-new-status">Status</label>
+        <select id="add-task-status" name="status" required>
+          <option value="todo">todo</option>
+          <option value="doing">doing</option>
+          <option value="done">done</option>
+        </select>
+        <button type="button" class="create-new-task" id="create-task">
+          Create Task
+        </button>
+      </form>
+    </dialog>
   </body>
 </html>
