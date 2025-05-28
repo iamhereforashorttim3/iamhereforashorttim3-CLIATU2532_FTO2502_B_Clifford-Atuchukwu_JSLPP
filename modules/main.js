@@ -19,6 +19,17 @@ async function startApp() {
     //This removes the loading message if the tasks are loaded
     const loadingElement = document.getElementById("loading");
     if (loadingElement) loadingElement.remove();
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const closeBtn = document.getElementById("task-close-btn");
+      const modal = document.getElementById("task-modal");
+
+      if (closeBtn && modal) {
+        closeBtn.addEventListener("click", () => {
+          modal.close();
+        });
+      }
+    });
   } catch (error) {
     /**
      * In case of error, the loading is removed and an error message will show
