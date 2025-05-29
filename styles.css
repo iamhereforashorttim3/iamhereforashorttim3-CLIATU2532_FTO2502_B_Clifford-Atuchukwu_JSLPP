@@ -11,6 +11,14 @@
   --sidebar-width: 300px;
 }
 
+.darkmode {
+  --primary-color: #2b2c37;
+  --secondary-color: #3e3f4e;
+  --primary-font-color: #ffffff;
+  --secondary-font-color: #828fa3;
+  --primary-box-shadow: 0px 4px 6px rgba(54, 78, 126, 0.1015);
+}
+
 body {
   font-family: "Plus Jakarta Sans", sans-serif;
   display: flex;
@@ -464,4 +472,15 @@ form label {
   width: 200px;
   height: 40px;
   border: none;
+}
+
+#theme-toggle {
+  height: 50px;
+  width: 50px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: var(--secondary-font-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
