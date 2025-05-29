@@ -9,7 +9,7 @@
       sizes="32x32"
       href="./assets/logo-light (1).svg"
     />
-    <script defer src="./modules/main.js" type="module"></script>
+    <script defer src="modules/main.js" type="module"></script>
     <link rel="stylesheet" href="./styles.css" />
     <title>Kanban Task Management</title>
   </head>
@@ -23,10 +23,10 @@
         <h4 id="headline-sidepanel">ALL BOARDS (1)</h4>
         <button class="board-btn">Launch Career</button>
       </div>
-      <div class="toggle-theme-btn" id="theme-toggle-btn"></div>
       <div class="hide-sidebar-btn" id="hide-sidebar">
         <button type="button" id="hidden-sidebar">Hide Sidebar</button>
       </div>
+      <button id="theme-toggle">Click to change</button>
     </nav>
 
     <div id="layout">
@@ -101,7 +101,7 @@
           <option value="doing">doing</option>
           <option value="done">done</option>
         </select>
-        <div>
+        <div class="editing-btn">
           <button type="button" class="save-changes" id="save-changes-btn">
             Save Changes
           </button>
