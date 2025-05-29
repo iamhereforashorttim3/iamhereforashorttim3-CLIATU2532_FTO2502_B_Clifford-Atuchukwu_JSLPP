@@ -5,6 +5,7 @@ import { fetchTasks } from "./api/api.js";
 import { renderTasksFromLocalStorage } from "./ui/render.js";
 import { setupCreateTaskHandler } from "./tasks/addTask.js";
 import { setupEditTaskHandlers } from "./tasks/editTask.js";
+import { themeToggleSwitch } from "./ui/theme.js";
 
 const loading = document.createElement("div");
 loading.id = "loading";
@@ -45,6 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
   startApp();
   setupCreateTaskHandler();
   setupEditTaskHandlers();
+  themeToggleSwitch();
 
   const closebtn = document.getElementById("task-close-btn");
   const modal = document.getElementById("task-modal");
