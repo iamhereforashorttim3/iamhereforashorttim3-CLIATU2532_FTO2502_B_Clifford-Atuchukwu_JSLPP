@@ -4,6 +4,7 @@
 import { fetchTasks } from "./api/api.js";
 import { renderTasksFromLocalStorage } from "./ui/render.js";
 import { setupCreateTaskHandler } from "./tasks/addTask.js";
+import { setupEditTaskHandlers } from "./tasks/editTask.js";
 
 const loading = document.createElement("div");
 loading.id = "loading";
@@ -37,12 +38,13 @@ async function startApp() {
   }
 }
 
-startApp();
 /**
  * This is what gives functionality to the close button of the task modal
  */
 document.addEventListener("DOMContentLoaded", () => {
+  startApp();
   setupCreateTaskHandler();
+  setupEditTaskHandlers();
 
   const closebtn = document.getElementById("task-close-btn");
   const modal = document.getElementById("task-modal");
