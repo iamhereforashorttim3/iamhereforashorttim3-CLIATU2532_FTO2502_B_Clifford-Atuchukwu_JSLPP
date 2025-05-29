@@ -19,6 +19,7 @@ export function renderTasksFromLocalStorage() {
     taskDiv.addEventListener("click", handleTaskClick);
 
     taskDiv.textContent = task.title;
+    taskDiv.dataset.taskId = task.id;
 
     const column = document.querySelector(
       `.column-div[data-status="${task.status}"]`
