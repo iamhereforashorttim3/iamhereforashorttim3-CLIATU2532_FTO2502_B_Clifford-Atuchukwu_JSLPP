@@ -12,8 +12,13 @@ document.body.appendChild(loading);
 
 async function startApp() {
   try {
-    const tasks = await fetchTasks();
-    localStorage.setItem("tasks", JSON.stringify(tasks));
+    let tasks = JSON.parse(localStorage.getItem("tasks"));
+
+    if (!tasks || tasks.length === 0) {
+      tasks = await fetchTasks();
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+    }
+
     renderTasksFromLocalStorage();
 
     console.log("Tasks loaded:", tasks);
