@@ -1,4 +1,6 @@
 export function themeToggleSwitch() {
+  const toggleBtn = document.getElementById("theme-toggle");
+
   let darkmode = localStorage.getItem("darkmode");
   const themeSwitch = document.getElementById("theme-toggle");
 
@@ -14,8 +16,11 @@ export function themeToggleSwitch() {
     if (logo) logo.src = "./assets/logo-light (1).svg";
   };
 
-  if (darkmode === "active") enableDarkmode();
-  else disableDarkMode();
+  if (darkmode === "active") {
+    enableDarkmode();
+  } else {
+    disableDarkMode();
+  }
 
   themeSwitch.addEventListener("click", () => {
     darkmode = localStorage.getItem("darkmode");
