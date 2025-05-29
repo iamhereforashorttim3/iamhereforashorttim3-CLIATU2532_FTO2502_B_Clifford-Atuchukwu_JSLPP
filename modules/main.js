@@ -3,6 +3,7 @@
  */
 import { fetchTasks } from "./api/api.js";
 import { renderTasksFromLocalStorage } from "./ui/render.js";
+import { setupCreateTaskHandler } from "./tasks/addTask.js";
 
 const loading = document.createElement("div");
 loading.id = "loading";
@@ -19,17 +20,6 @@ async function startApp() {
     //This removes the loading message if the tasks are loaded
     const loadingElement = document.getElementById("loading");
     if (loadingElement) loadingElement.remove();
-
-    document.addEventListener("DOMContentLoaded", () => {
-      const closeBtn = document.getElementById("task-close-btn");
-      const modal = document.getElementById("task-modal");
-
-      if (closeBtn && modal) {
-        closeBtn.addEventListener("click", () => {
-          modal.close();
-        });
-      }
-    });
   } catch (error) {
     /**
      * In case of error, the loading is removed and an error message will show
@@ -43,3 +33,36 @@ async function startApp() {
 }
 
 startApp();
+/**
+ * This is what gives functionality to the close button of the task modal
+ */
+document.addEventListener("DOMContentLoaded", () => {
+  setupCreateTaskHandler();
+
+  const closebtn = document.getElementById("task-close-btn");
+  const modal = document.getElementById("task-modal");
+
+  if (closebtn && modal) {
+    closebtn.addEventListener("click", () => {
+      modal.close();
+    });
+  }
+
+  const addBtn = document.getElementById("add-btn");
+  const addNewTaskModal = document.getElementById("add-new-task-modal");
+
+  if (addBtn && addNewTaskModal) {
+    addBtn.addEventListener("click", () => {
+      addNewTaskModal.showModal();
+    });
+  }
+
+  const addCloseBtn = document.getElementById("add-close-btn");
+  const addModal = document.getElementById("add-new-task-modal");
+
+  if (addCloseBtn && addModal) {
+    addCloseBtn.addEventListener("click", () => {
+      addModal.close();
+    });
+  }
+});
