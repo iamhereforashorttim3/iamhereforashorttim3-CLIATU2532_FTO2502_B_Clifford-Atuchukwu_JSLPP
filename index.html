@@ -23,6 +23,10 @@
         <h4 id="headline-sidepanel">ALL BOARDS (1)</h4>
         <button class="board-btn">Launch Career</button>
       </div>
+      <div class="toggle-theme-btn" id="theme-toggle-btn"></div>
+      <div class="hide-sidebar-btn" id="hide-sidebar">
+        <button type="button" id="hidden-sidebar">Hide Sidebar</button>
+      </div>
     </nav>
 
     <div id="layout">
@@ -97,12 +101,14 @@
           <option value="doing">doing</option>
           <option value="done">done</option>
         </select>
-        <button type="button" class="save-changes" id="save-changes-btn">
-          Save Changes
-        </button>
-        <button type="button" class="delete-task" id="delete-task-btn">
-          Delete Task
-        </button>
+        <div>
+          <button type="button" class="save-changes" id="save-changes-btn">
+            Save Changes
+          </button>
+          <button type="button" class="delete-task" id="delete-task-btn">
+            Delete Task
+          </button>
+        </div>
       </form>
     </dialog>
 
