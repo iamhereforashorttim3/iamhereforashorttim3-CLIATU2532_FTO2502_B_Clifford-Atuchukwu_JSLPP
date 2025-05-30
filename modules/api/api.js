@@ -1,3 +1,6 @@
+/**
+ * It fetches the tasks from the API
+ */
 export async function fetchTasks() {
   try {
     const response = await fetch("https://jsl-kanban-api.vercel.app");
