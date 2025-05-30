@@ -537,3 +537,36 @@ form label {
     transform: rotate(360deg);
   }
 }
+
+.side-bar {
+  width: 250px;
+  transition: width 0.3s ease;
+  overflow: hidden;
+}
+
+.side-bar.collapsed {
+  width: 0;
+}
+
+.side-bar.collapsed * {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.hide-sidebar-btn {
+  position: absolute;
+  left: 250px;
+  top: 1rem;
+  transition: left 0.3s ease;
+}
+
+.side-bar.collapsed + .hide-sidebar-btn {
+  left: 0;
+}
+
+@media (max-width: 768px) {
+  #hide-sidebar {
+    display: none;
+  }
+}
