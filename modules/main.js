@@ -1,5 +1,5 @@
 /**
- * Function imports tasks from the API
+ * Imports the needed modules for app functionality
  */
 import { fetchTasks } from "./api/api.js";
 import { renderTasksFromLocalStorage } from "./ui/render.js";
@@ -8,6 +8,11 @@ import { setupEditTaskHandlers } from "./tasks/editTask.js";
 import { themeToggleSwitch } from "./ui/theme.js";
 import { setupSidebarToggle } from "./ui/sidebar.js";
 
+/**
+ * Fetches the tasks from the API
+ * Renders the tasks onto the board
+ * Displays an error message if task loading fails
+ */
 async function startApp() {
   try {
     let tasks = JSON.parse(localStorage.getItem("tasks"));
@@ -36,7 +41,10 @@ async function startApp() {
 }
 
 /**
- * This is what gives functionality to the close button of the task modal
+ * Runs after the DOM has fully loaded in
+ * Sets up the handlers for creating and editing tasks
+ * Enables theme and sidebar toggle features
+ * Adds event listeners to open/close modals
  */
 document.addEventListener("DOMContentLoaded", () => {
   startApp();
@@ -45,6 +53,9 @@ document.addEventListener("DOMContentLoaded", () => {
   themeToggleSwitch();
   setupSidebarToggle();
 
+  /**
+   * Closes the task view modal when the close button is clicked
+   */
   const closebtn = document.getElementById("task-close-btn");
   const modal = document.getElementById("task-modal");
 
@@ -53,7 +64,9 @@ document.addEventListener("DOMContentLoaded", () => {
       modal.close();
     });
   }
-
+  /**
+   * Opens the add new task modal when the +Add New Task button is clicked
+   */
   const addBtn = document.getElementById("add-btn");
   const addNewTaskModal = document.getElementById("add-new-task-modal");
 
@@ -62,7 +75,9 @@ document.addEventListener("DOMContentLoaded", () => {
       addNewTaskModal.showModal();
     });
   }
-
+  /**
+   * Closes the add new tasl modal when the close button is clicked
+   */
   const addCloseBtn = document.getElementById("add-close-btn");
   const addModal = document.getElementById("add-new-task-modal");
 
