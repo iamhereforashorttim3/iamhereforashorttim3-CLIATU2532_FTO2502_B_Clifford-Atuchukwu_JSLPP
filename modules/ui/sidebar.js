@@ -1,13 +1,17 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const hideSidebarButton = document.getElementById("hidden-sidebar");
+export function setupSidebarToggle() {
+  const sidebar = document.getElementById("side-bar-div");
+  const toggleBtn = document.getElementById("toggle-sidebar-btn");
 
-  hideSidebarButton.addEventListener("click", () => {
-    document.body.classList.toggle("sidebar-div");
+  if (!sidebar || !toggleBtn) return;
 
-    if (document.body.classList.contains("sidebar-div")) {
-      hideSidebarButton.textContent = "Show Sidebar";
+  toggleBtn.addEventListener("click", () => {
+    sidebar.classList.toggle("collapsed");
+
+    const icon = document.getElementById("sidebar-icon");
+    if (sidebar.classList.contains("collapsed")) {
+      icon.src = "./assets/icon-show-sidebar.svg";
     } else {
-      hideSidebarButton.textContent = "Hide Sidebar";
+      icon.src = "./assets/icon-hide-sidebar.svg";
     }
   });
-});
+}
