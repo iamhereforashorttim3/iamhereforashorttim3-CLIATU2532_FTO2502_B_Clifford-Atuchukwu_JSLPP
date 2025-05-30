@@ -24,7 +24,10 @@ export function renderTasksFromLocalStorage() {
       }
     });
   }
-
+  let renderedTaskCount = 0;
+  /**
+   *
+   */
   tasks.forEach((task) => {
     const taskDiv = document.createElement("div");
     taskDiv.classList.add("task-div");
@@ -45,8 +48,31 @@ export function renderTasksFromLocalStorage() {
 
     if (container) {
       container.appendChild(taskDiv);
+      renderedTaskCount++;
     }
   });
 
+  function updateTaskCounts() {
+    const statuses = ["todo", "doing", "done"];
+
+    statuses.forEach((status) => {
+      const container = document.querySelector(
+        `.column-div[data-status="${status}"] .tasks-container`
+      );
+      const count = container ? container.children.length : 0;
+
+      const header = document.getElementById(`${status}Text`);
+      if (header) {
+        const capitalizedStatus = status.toUpperCase();
+        header.textContent = `${capitalizedStatus} (${count})`;
+      }
+    });
+  }
+
   updateTaskCounts();
+
+  const noTasksMessage = document.getElementById("no-tasks-message");
+  if (noTasksMessage) {
+    noTasksMessage.style.display = renderedTaskCount === 0 ? "block" : "none";
+  }
 }
