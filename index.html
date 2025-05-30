@@ -23,9 +23,13 @@
         <h4 id="headline-sidepanel">ALL BOARDS (1)</h4>
         <button class="board-btn">Launch Career</button>
       </div>
+
       <div class="hide-sidebar-btn" id="hide-sidebar">
-        <button type="button" id="hidden-sidebar">Hide Sidebar</button>
+        <button type="button" id="toggle-sidebar-btn">
+          <img id="sidebar-icon" src="./assets/icon-hide-sidebar.svg" />
+        </button>
       </div>
+
       <button id="theme-toggle" class="theme-toggle-btn">
         <span class="icon-light">🌞</span>
         <span class="icon-dark">🌙</span>
@@ -40,6 +44,7 @@
             src="./assets/favicon (3).svg"
             alt="logo-mobile"
             class="logo-mobile"
+            id="mobile-svg-icon"
           />
           <h2 class="header-board-name" id="header-board-name">
             Launch Career
@@ -58,7 +63,7 @@
           <div class="column-div" data-status="todo">
             <div id="todo-head-div" class="column-head-div">
               <span class="dot" id="todo-dot"></span>
-              <h4 id="toDoText" class="columnHeader">TODO ()</h4>
+              <h4 id="todoText" class="columnHeader">TODO (0)</h4>
             </div>
 
             <div class="tasks-container"></div>
@@ -66,7 +71,7 @@
           <div class="column-div" data-status="doing">
             <div id="doing-head-div" class="column-head-div">
               <span class="dot" id="doing-dot"></span>
-              <h4 id="doingText" class="columnHeader">DOING ()</h4>
+              <h4 id="doingText" class="columnHeader">DOING (0)</h4>
             </div>
 
             <div class="tasks-container"></div>
@@ -75,7 +80,7 @@
           <div class="column-div" data-status="done">
             <div id="done-head-div" class="column-head-div">
               <span class="dot" id="done-dot"></span>
-              <h4 id="doneText" class="columnHeader">DONE ()</h4>
+              <h4 id="doneText" class="columnHeader">DONE (0)</h4>
             </div>
 
             <div class="tasks-container"></div>
