@@ -583,3 +583,22 @@ form label {
     display: none;
   }
 }
+
+#no-tasks-message {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #e63946;
+  background-color: #fceae9;
+  padding: 20px 30px;
+  border: 2px solid #e63946;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-align: center;
+  z-index: 1000;
+  max-width: 90%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
