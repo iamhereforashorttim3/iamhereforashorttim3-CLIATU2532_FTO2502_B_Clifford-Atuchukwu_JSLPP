@@ -6,11 +6,7 @@ import { renderTasksFromLocalStorage } from "./ui/render.js";
 import { setupCreateTaskHandler } from "./tasks/addTask.js";
 import { setupEditTaskHandlers } from "./tasks/editTask.js";
 import { themeToggleSwitch } from "./ui/theme.js";
-
-const loading = document.createElement("div");
-loading.id = "loading";
-loading.textContent = "Tasks loading...";
-document.body.appendChild(loading);
+import { sidebarToggleBtn } from "./ui/sidebar.js";
 
 async function startApp() {
   try {
@@ -47,6 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupCreateTaskHandler();
   setupEditTaskHandlers();
   themeToggleSwitch();
+  sidebarToggleBtn();
 
   const closebtn = document.getElementById("task-close-btn");
   const modal = document.getElementById("task-modal");
