@@ -577,3 +577,9 @@ form label {
     display: none;
   }
 }
+
+@media screen and (max-width: 1023px) {
+  #header-board-name {
+    display: none;
+  }
+}
