@@ -30,6 +30,11 @@ body {
   font-size: 1rem;
 }
 
+select option {
+  background-color: var(--primary-color);
+  color: var(--primary-font-color);
+}
+
 .side-bar {
   display: flex;
   flex-direction: column;
